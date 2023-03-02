@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import {
-  Divider,
   Link,
   List,
   ListItem,
@@ -18,9 +17,9 @@ import TimelineOppositeContent, {
 } from "@mui/lab/TimelineOppositeContent";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
-import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
 import LaptopMacIcon from "@mui/icons-material/LaptopMac";
 import CheckIcon from "@mui/icons-material/Check";
+import SectionTitle from "../utils/sectionTitle";
 
 const Jobs = [
   {
@@ -101,7 +100,7 @@ const JobItem = ({ jobObj }) => {
 
   return (
     <TimelineItem>
-      <TimelineOppositeContent color="textSecondary" sx={{ paddingLeft: 0 }}>
+      <TimelineOppositeContent color="textSecondary">
         {jobObj.duration}
       </TimelineOppositeContent>
       <TimelineSeparator>
@@ -109,7 +108,7 @@ const JobItem = ({ jobObj }) => {
         <TimelineConnector />
       </TimelineSeparator>
       <TimelineContent>
-        <h3 style={{ margin: "0px" }}>{jobObj.designation}</h3>
+        <h3 className="m-0">{jobObj.designation}</h3>
         <p style={{ margin: "0px 0px 5px 0px" }}>
           <em>
             {jobObj.company} - {jobObj.location}
@@ -120,13 +119,13 @@ const JobItem = ({ jobObj }) => {
           variant="body2"
           underline="none"
           onClick={toggleDetails}
-          sx={{ display: "flex", alignItems: "center" }}
+          className="d-flex align-items-center"
         >
           Read&nbsp;{showDetails ? "less" : "more"}&nbsp;
           {showDetails ? <ExpandLessIcon /> : <ExpandMoreIcon />}
         </Link>
         <Zoom in={showDetails} mountOnEnter unmountOnExit>
-          <List sx={{ width: "100%" }}>{listItems}</List>
+          <List className="w-100">{listItems}</List>
         </Zoom>
       </TimelineContent>
     </TimelineItem>
@@ -139,29 +138,15 @@ const WorkHistory = () => {
   ));
   return (
     <>
-      <h2
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        {/* <WorkHistoryIcon />
-        &nbsp;&nbsp; */}
-        My Employment
-      </h2>
-      <Divider sx={{ borderWidth: 2 }} />
+      <SectionTitle title={"My Employment"} />
       <Timeline
         sx={{
           [`& .${timelineOppositeContentClasses.root}`]: {
             flex: 0.2,
           },
-          p: 0,
+          p: 2,
         }}
       >
-        {/* {Jobs.map((job, i) => (
-          <JobItem keyProp={job.designation + i} jobObj={job} />
-        ))} */}
         {jobItems}
       </Timeline>
     </>

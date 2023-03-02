@@ -14,34 +14,15 @@ const Home = () => {
     <Container maxWidth="xlg" sx={{ height: "100vh" }}>
       <CssBaseline />
       <Toolbar />
-      <Grid
-        container
-        sx={{
-          display: "flex",
-          height: "100%",
-          alignItems: "center",
-          padding: 0,
-        }}
-      >
+      <Grid container className="h-100 d-flex align-items-center" sx={{ p: 0 }}>
         <Grid
           item
           md={6}
           xs={12}
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
+          className="d-flex align-items-center justify-content-center"
         >
           <button className="glow-on-hover" type="button">
-            <h2
-              style={{
-                margin: 0,
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
+            <h2 className="d-flex align-items-center justify-content-center m-0">
               <FileDownloadIcon />
               &nbsp; Download CV
             </h2>
@@ -52,14 +33,7 @@ const Home = () => {
             type="button"
             onClick={gotoDiscoverHome}
           >
-            <h2
-              style={{
-                margin: 0,
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
+            <h2 className="d-flex align-items-center justify-content-center m-0">
               Discover&nbsp;
               <DoubleArrowIcon />
             </h2>
@@ -67,12 +41,9 @@ const Home = () => {
         </Grid>
         <Grid item md={6} xs={12}>
           <div
+            className="d-flex align-items-center justify-content-center bg-dark"
             style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
               padding: "100px 0px",
-              backgroundColor: "#1A2027",
             }}
           >
             <img

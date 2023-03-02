@@ -5,19 +5,12 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const AboutMe = () => {
   return (
-    <Box sx={{ bgcolor: "#1A2027", width: "100%" }}>
+    <Box className="w-100 bg-dark">
       <Container
         maxWidth="md"
-        sx={{
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          textAlign: "center",
-          color: "#fff",
-        }}
+        className="h-100 d-flex flex-column align-items-center justify-content-center text-white text-center"
       >
+        {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}
         <h1>// About Me</h1>
         <p>
           I am a front-end developer and web designer with many years of
@@ -37,16 +30,9 @@ const AboutMe = () => {
           graduated from Gujarat Technological University with Bachelor of
           Engineering in Computer engineering 4 years program.
         </p>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            margin: "20px 0px",
-          }}
-        >
+        <div className="d-flex align-items-center justify-content-center my-20">
           <IconButton onClick={() => {}} color="inherit">
-            <ExpandMoreIcon sx={{ fontSize: 80 }} />
+            <ExpandMoreIcon className="bounce2" sx={{ fontSize: 80 }} />
           </IconButton>
         </div>
       </Container>

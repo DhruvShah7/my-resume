@@ -1,0 +1,7 @@
+.bounce:hover {
+  transform: scale(1.02);
+}
+
+.bounce2:hover {
+  transform: scale(1.2);
+}
