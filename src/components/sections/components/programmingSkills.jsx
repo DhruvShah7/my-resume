@@ -1,28 +1,6 @@
-import React, { useRef, useState } from "react";
-import Box from "@mui/material/Box";
-import {
-  Button,
-  Divider,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Zoom,
-} from "@mui/material";
-import Timeline from "@mui/lab/Timeline";
-import TimelineItem from "@mui/lab/TimelineItem";
-import TimelineSeparator from "@mui/lab/TimelineSeparator";
-import TimelineConnector from "@mui/lab/TimelineConnector";
-import TimelineContent from "@mui/lab/TimelineContent";
-import TimelineDot from "@mui/lab/TimelineDot";
-import TimelineOppositeContent, {
-  timelineOppositeContentClasses,
-} from "@mui/lab/TimelineOppositeContent";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import ExpandLessIcon from "@mui/icons-material/ExpandLess";
-import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
-import LaptopMacIcon from "@mui/icons-material/LaptopMac";
-import CheckIcon from "@mui/icons-material/Check";
+import React from "react";
+import { List, ListItem, ListItemText } from "@mui/material";
+import SectionTitle from "../utils/sectionTitle";
 
 const ProgrammingSkillsConstants = [
   "ReactJS",
@@ -43,74 +21,47 @@ const WebServices = ["AWS (Amazon Web Services)"];
 const VersionControl = ["Bit Bucket", "JIRA", "GIT"];
 
 const ProgrammingSkills = () => {
+  const progSkillList = ProgrammingSkillsConstants.map((text) => (
+    <ListItem key={text} sx={{ p: 0 }}>
+      <ListItemText primary={text} />
+    </ListItem>
+  ));
+
+  const databaseList = Database.map((text) => (
+    <ListItem key={text} sx={{ p: 0 }}>
+      <ListItemText primary={text} />
+    </ListItem>
+  ));
+
+  const webServicesList = WebServices.map((text) => (
+    <ListItem key={text} sx={{ p: 0 }}>
+      <ListItemText primary={text} />
+    </ListItem>
+  ));
+
+  const versionControlList = VersionControl.map((text) => (
+    <ListItem key={text} sx={{ p: 0 }}>
+      <ListItemText primary={text} />
+    </ListItem>
+  ));
+
   return (
     <>
-      <h2
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "start",
-        }}
-      >
-        Programming Skills
-      </h2>
-      <List sx={{ width: "100%", columnCount: 2 }}>
-        {ProgrammingSkillsConstants.map((text) => (
-          <ListItem sx={{ p: 0 }}>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+      <SectionTitle title={"Programming Skills"} />
+      <List className="w-100" sx={{ columnCount: 2, p: 1 }}>
+        {progSkillList}
       </List>
-      <Divider sx={{ borderWidth: 2, marginTop: "15px" }} />
-      <h2
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "start",
-        }}
-      >
-        Databases
-      </h2>
-      <List sx={{ width: "100%", columnCount: 2 }}>
-        {Database.map((text) => (
-          <ListItem sx={{ p: 0 }}>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+      <SectionTitle title={"Databases"} className="mt-15" />
+      <List className="w-100" sx={{ columnCount: 2, p: 1 }}>
+        {databaseList}
       </List>
-      <Divider sx={{ borderWidth: 2, marginTop: "15px" }} />
-      <h2
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "start",
-        }}
-      >
-        Web Services
-      </h2>
-      <List sx={{ width: "100%" }}>
-        {WebServices.map((text) => (
-          <ListItem sx={{ p: 0 }}>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+      <SectionTitle title={"Web Services"} className="mt-15" />
+      <List className="w-100" sx={{ p: 1 }}>
+        {webServicesList}
       </List>
-      <Divider sx={{ borderWidth: 2, marginTop: "15px" }} />
-      <h2
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "start",
-        }}
-      >
-        Version Control
-      </h2>
-      <List sx={{ width: "100%", columnCount: 2 }}>
-        {VersionControl.map((text) => (
-          <ListItem sx={{ p: 0 }}>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+      <SectionTitle title={"Version Control"} className="mt-15" />
+      <List className="w-100" sx={{ columnCount: 2, p: 1 }}>
+        {versionControlList}
       </List>
     </>
   );

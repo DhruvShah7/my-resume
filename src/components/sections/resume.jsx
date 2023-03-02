@@ -1,50 +1,28 @@
 import React from "react";
 import Box from "@mui/material/Box";
-import {
-  Container,
-  Divider,
-  Grid,
-  IconButton,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Paper,
-} from "@mui/material";
+import { Container, Grid, IconButton, Paper } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { styled } from "@mui/material/styles";
 import WorkHistory from "./components/workHistory";
-import CheckIcon from "@mui/icons-material/Check";
 import ProgrammingSkills from "./components/programmingSkills";
 import Education from "./components/education";
+import Projects from "./components/projects";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   textAlign: "center",
   color: theme.palette.text.secondary,
-  padding: "20px 20px",
+  padding: "20px",
 }));
 
 const Resume = () => {
   return (
-    <Box sx={{ width: "100%" }}>
-      <Container
-        maxWidth="lg"
-        sx={{
-          height: "100%",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign: "center",
-          }}
-        >
+    <Box className="w-100">
+      <Container maxWidth="xlg" className="h-100">
+        <div className="d-flex flex-column align-items-center justify-content-center text-center">
+          {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}
           <h1>// Resume</h1>
-          <p>
+          <p style={{ padding: "0px 10px" }}>
             Oracle Certified Professional, Java SE6 Programmer with 1-year
             experience with writing and teaching Java Programs in academic
             institute, 2-year experience as an Apache Cordova Developer, 4+
@@ -55,35 +33,36 @@ const Resume = () => {
         </div>
         <div>
           <Grid container>
-            <Grid item md={8} xs={12} sx={{ minHeight: "100px" }} p={1}>
-              <Item key={"employment"} elevation={8}>
+            <Grid item md={8} xs={12} sx={{ minHeight: "100px" }} p={2}>
+              <Item key={"employment"} className="bounce" elevation={8}>
                 <WorkHistory />
               </Item>
               <Item
                 key={"education"}
+                className="bounce"
                 elevation={8}
-                style={{ marginTop: "20px" }}
+                sx={{ mt: 3 }}
               >
                 <Education />
               </Item>
             </Grid>
-            <Grid item md={4} xs={12} sx={{ minHeight: "100px" }} p={1}>
-              <Item elevation={8} style={{ height: "100%" }}>
+            <Grid item md={4} xs={12} sx={{ minHeight: "100px" }} p={2}>
+              <Item key={"skills"} className="h-100 bounce" elevation={8}>
                 <ProgrammingSkills />
               </Item>
             </Grid>
           </Grid>
+          <Grid container>
+            <Grid item xs={12} sx={{ minHeight: "100px" }} p={2}>
+              <Item key={"projects"} className="h-100 bounce" elevation={8}>
+                <Projects />
+              </Item>
+            </Grid>
+          </Grid>
         </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            margin: "20px 0px",
-          }}
-        >
+        <div className="d-flex align-items-center justify-content-center my-20">
           <IconButton onClick={() => {}} color="inherit">
-            <ExpandMoreIcon sx={{ fontSize: 80 }} />
+            <ExpandMoreIcon className="bounce2" sx={{ fontSize: 80 }} />
           </IconButton>
         </div>
       </Container>

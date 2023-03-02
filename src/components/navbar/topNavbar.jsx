@@ -28,7 +28,7 @@ const navItems = [
   { text: "Contact", path: "" },
 ];
 
-const TopNavbar = ({}) => {
+const TopNavbar = () => {
   const theme = useTheme();
   const colorMode = React.useContext(ColorModeContext);
 
@@ -39,7 +39,7 @@ const TopNavbar = ({}) => {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box className="text-center" onClick={handleDrawerToggle}>
       <Typography variant="h6" sx={{ my: 2 }}>
         Dhruven Shah
       </Typography>
@@ -47,7 +47,7 @@ const TopNavbar = ({}) => {
       <List>
         {navItems.map((item) => (
           <ListItem key={item.text} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemButton className="text-center">
               <ListItemText primary={item.text} />
             </ListItemButton>
           </ListItem>
@@ -57,7 +57,7 @@ const TopNavbar = ({}) => {
   );
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box className="d-flex">
       <CssBaseline />
       <AppBar component="nav">
         <Toolbar>
@@ -82,7 +82,7 @@ const TopNavbar = ({}) => {
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item.text} sx={{ color: "#fff" }}>
+              <Button className="text-white" key={item.text}>
                 {item.text}
               </Button>
             ))}
