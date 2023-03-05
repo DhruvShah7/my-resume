@@ -7,6 +7,7 @@ import WorkHistory from "./components/workHistory";
 import ProgrammingSkills from "./components/programmingSkills";
 import Education from "./components/education";
 import Projects from "./components/projects";
+import Certifications from "./components/certifications";
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -15,7 +16,7 @@ const Item = styled(Paper)(({ theme }) => ({
   padding: "20px",
 }));
 
-const Resume = () => {
+const ResumePage = () => {
   return (
     <Box className="w-100">
       <Container maxWidth="xlg" className="h-100">
@@ -34,28 +35,22 @@ const Resume = () => {
         <div>
           <Grid container>
             <Grid item md={8} xs={12} sx={{ minHeight: "100px" }} p={2}>
-              <Item key={"employment"} className="bounce" elevation={8}>
+              <Item key={"employment"} elevation={1}>
                 <WorkHistory />
               </Item>
-              <Item
-                key={"education"}
-                className="bounce"
-                elevation={8}
-                sx={{ mt: 3 }}
-              >
+              <Item key={"education"} elevation={1} sx={{ mt: 3 }}>
                 <Education />
+              </Item>
+              <Item key={"certifications"} elevation={1} sx={{ mt: 3 }}>
+                <Certifications />
+              </Item>
+              <Item key={"projects"} elevation={1} sx={{ mt: 3 }}>
+                <Projects />
               </Item>
             </Grid>
             <Grid item md={4} xs={12} sx={{ minHeight: "100px" }} p={2}>
               <Item key={"skills"} className="h-100 bounce" elevation={8}>
                 <ProgrammingSkills />
-              </Item>
-            </Grid>
-          </Grid>
-          <Grid container>
-            <Grid item xs={12} sx={{ minHeight: "100px" }} p={2}>
-              <Item key={"projects"} className="h-100 bounce" elevation={8}>
-                <Projects />
               </Item>
             </Grid>
           </Grid>
@@ -70,6 +65,6 @@ const Resume = () => {
   );
 };
 
-Resume.propTypes = {};
+ResumePage.propTypes = {};
 
-export default Resume;
+export default ResumePage;

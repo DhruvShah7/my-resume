@@ -5,8 +5,9 @@ import Toolbar from "@mui/material/Toolbar";
 import ScrollTop from "./utils/scrollTop";
 import { Fab } from "@mui/material";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import AboutMe from "./sections/aboutMe";
-import Resume from "./sections/resume";
+import AboutMePage from "./sections/aboutMePage";
+import ResumePage from "./sections/resumePage";
+import ContactPage from "./sections/contactPage";
 
 const DiscoverHome = () => {
   return (
@@ -19,16 +20,9 @@ const DiscoverHome = () => {
         }}
       >
         <Toolbar />
-        <AboutMe />
-        <Resume />
-        {[...new Array(50)]
-          .map(
-            () => `Cras mattis consectetur purus sit amet fermentum.
-Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
-          )
-          .join("\n")}
+        <AboutMePage />
+        <ResumePage />
+        <ContactPage />
         <ScrollTop>
           <Fab size="small" aria-label="scroll back to top">
             <KeyboardArrowUpIcon />
