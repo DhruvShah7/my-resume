@@ -23,25 +23,45 @@ const VersionControl = ["Bit Bucket", "JIRA", "GIT"];
 const ProgrammingSkills = () => {
   const progSkillList = ProgrammingSkillsConstants.map((text) => (
     <ListItem key={text} sx={{ p: 0 }}>
-      <ListItemText primary={text} />
+      <ListItemText
+        primary={text}
+        primaryTypographyProps={{
+          fontWeight: "bold",
+        }}
+      />
     </ListItem>
   ));
 
   const databaseList = Database.map((text) => (
     <ListItem key={text} sx={{ p: 0 }}>
-      <ListItemText primary={text} />
+      <ListItemText
+        primary={text}
+        primaryTypographyProps={{
+          fontWeight: "bold",
+        }}
+      />
     </ListItem>
   ));
 
   const webServicesList = WebServices.map((text) => (
     <ListItem key={text} sx={{ p: 0 }}>
-      <ListItemText primary={text} />
+      <ListItemText
+        primary={text}
+        primaryTypographyProps={{
+          fontWeight: "bold",
+        }}
+      />
     </ListItem>
   ));
 
   const versionControlList = VersionControl.map((text) => (
     <ListItem key={text} sx={{ p: 0 }}>
-      <ListItemText primary={text} />
+      <ListItemText
+        primary={text}
+        primaryTypographyProps={{
+          fontWeight: "bold",
+        }}
+      />
     </ListItem>
   ));
 
@@ -51,15 +71,15 @@ const ProgrammingSkills = () => {
       <List className="w-100" sx={{ columnCount: 2, p: 1 }}>
         {progSkillList}
       </List>
-      <SectionTitle title={"Databases"} className="mt-15" />
+      <SectionTitle title={"Databases"} className="mt-50" />
       <List className="w-100" sx={{ columnCount: 2, p: 1 }}>
         {databaseList}
       </List>
-      <SectionTitle title={"Web Services"} className="mt-15" />
+      <SectionTitle title={"Web Services"} className="mt-50" />
       <List className="w-100" sx={{ p: 1 }}>
         {webServicesList}
       </List>
-      <SectionTitle title={"Version Control"} className="mt-15" />
+      <SectionTitle title={"Version Control"} className="mt-50" />
       <List className="w-100" sx={{ columnCount: 2, p: 1 }}>
         {versionControlList}
       </List>

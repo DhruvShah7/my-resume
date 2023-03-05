@@ -3,20 +3,14 @@ import { Divider, Grid } from "@mui/material";
 import SchoolIcon from "@mui/icons-material/School";
 import SectionTitle from "../utils/sectionTitle";
 
-const Studies = [
+const Certies = [
   {
-    program: "Internet Programming & Database Management (co-op)",
-    degree: "Ontario Grad Certificate",
-    college: "Lambton College",
-    duration: "Sept 2015 – Dec 2016",
-    location: "Sarnia, ON",
+    program: "Internet of Things & Modern Web Specialist",
+    duration: "March 2018",
   },
   {
-    program: "Computer Engineering",
-    degree: "Bachelor of Engineering",
-    college: "Gujarat Technological University",
-    duration: "July 2010 - July 2014",
-    location: "Ahmedabad, India",
+    program: "Oracle Certified Professional, Java SE6 Programmer (OCJP)",
+    duration: "Aug 2014",
   },
 ];
 
@@ -58,18 +52,18 @@ const StudyItem = ({ studyObj, certificate }) => {
   );
 };
 
-const Education = () => {
-  const studyItems = Studies.map((item) => (
-    <StudyItem keyProp={item.degree} studyObj={item} />
+const Certifications = () => {
+  const certiItems = Certies.map((item) => (
+    <StudyItem keyProp={item.degree} studyObj={item} certificate />
   ));
   return (
     <>
-      <SectionTitle title={"My Education"} />
-      {studyItems}
+      <SectionTitle title={"Certifications"} />
+      {certiItems}
     </>
   );
 };
 
-Education.propTypes = {};
+Certifications.propTypes = {};
 
-export default Education;
+export default Certifications;

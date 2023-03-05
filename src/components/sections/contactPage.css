@@ -1,0 +1,28 @@
+.contactOptionBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+.contactOptionBox:hover {
+  cursor: pointer;
+}
+
+.contactOptionBox:hover > #reachMeMap {
+  color: #ea4335 !important;
+  transform: scale(1.4);
+}
+.contactOptionBox:hover > #reachMeEmail {
+  color: #1e88e5 !important;
+  transform: scale(1.4);
+}
+.contactOptionBox:hover > #reachMeCell {
+  color: #009688 !important;
+  transform: scale(1.4);
+}
+.contactOptionBox:hover > #reachMeLinkedIn {
+  color: #0a66c2 !important;
+  transform: scale(1.4);
+}

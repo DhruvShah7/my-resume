@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import { Container, IconButton } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-const AboutMe = () => {
+const AboutMePage = () => {
   return (
     <Box className="w-100 bg-dark">
       <Container
@@ -40,6 +40,6 @@ const AboutMe = () => {
   );
 };
 
-AboutMe.propTypes = {};
+AboutMePage.propTypes = {};
 
-export default AboutMe;
+export default AboutMePage;

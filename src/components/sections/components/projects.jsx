@@ -49,7 +49,7 @@ const ProjectItem = ({ projectObj }) => {
   ));
   return (
     <Grid item className="bounce" xs={6}>
-      <Item className="h-100 text-left" sx={{ p: 2 }}>
+      <Item className="h-100 text-left" variant="outlined" sx={{ p: 2 }}>
         <h3 className="m-0">{projectObj.name}</h3>
         <p className="m-0">
           <em>{projectObj.tech}</em>
