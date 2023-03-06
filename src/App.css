@@ -39,6 +39,13 @@
 
 /* Custom CSS */
 
+.topNavText {
+  color: #fff;
+}
+.topNavText:hover {
+  color: #1a2027;
+}
+
 /* flex-box */
 
 .d-flex {
@@ -129,6 +136,11 @@
 
 .text-white {
   color: #fff !important;
+}
+
+/* cursor */
+.cursor-pointer {
+  cursor: pointer !important;
 }
 
 /* text-align */

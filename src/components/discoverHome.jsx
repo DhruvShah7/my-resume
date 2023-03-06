@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useRef } from "react";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
 import Toolbar from "@mui/material/Toolbar";
@@ -10,6 +10,24 @@ import ResumePage from "./sections/resumePage";
 import ContactPage from "./sections/contactPage";
 
 const DiscoverHome = () => {
+  const aboutMePageRef = useRef(null);
+  const resumePageRef = useRef(null);
+  const contactPageRef = useRef(null);
+
+  const scrollTo = (scrollToSection) => {
+    let ref = aboutMePageRef;
+    if (scrollToSection === "resume") ref = resumePageRef;
+    else if (scrollToSection === "contact") ref = contactPageRef;
+
+    window.scrollTo({
+      behavior: "smooth",
+      top:
+        ref.current.getBoundingClientRect().top -
+        document.body.getBoundingClientRect().top -
+        64,
+    });
+  };
+
   return (
     <Box className="d-flex">
       <CssBaseline />
@@ -20,11 +38,11 @@ const DiscoverHome = () => {
         }}
       >
         <Toolbar />
-        <AboutMePage />
-        <ResumePage />
-        <ContactPage />
+        <AboutMePage ref={aboutMePageRef} scrollTo={scrollTo} />
+        <ResumePage ref={resumePageRef} scrollTo={scrollTo} />
+        <ContactPage ref={contactPageRef} />
         <ScrollTop>
-          <Fab size="small" aria-label="scroll back to top">
+          <Fab size="large" aria-label="scroll back to top">
             <KeyboardArrowUpIcon />
           </Fab>
         </ScrollTop>

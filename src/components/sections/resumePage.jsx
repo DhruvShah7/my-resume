@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import Box from "@mui/material/Box";
 import { Container, Grid, IconButton, Paper } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -16,9 +16,9 @@ const Item = styled(Paper)(({ theme }) => ({
   padding: "20px",
 }));
 
-const ResumePage = () => {
+const ResumePage = forwardRef(({ scrollTo }, ref) => {
   return (
-    <Box className="w-100">
+    <Box ref={ref} className="w-100">
       <Container maxWidth="xlg" className="h-100">
         <div className="d-flex flex-column align-items-center justify-content-center text-center">
           {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}
@@ -56,15 +56,13 @@ const ResumePage = () => {
           </Grid>
         </div>
         <div className="d-flex align-items-center justify-content-center my-20">
-          <IconButton onClick={() => {}} color="inherit">
+          <IconButton onClick={() => scrollTo("contact")} color="inherit">
             <ExpandMoreIcon className="bounce2" sx={{ fontSize: 80 }} />
           </IconButton>
         </div>
       </Container>
     </Box>
   );
-};
-
-ResumePage.propTypes = {};
+});
 
 export default ResumePage;
