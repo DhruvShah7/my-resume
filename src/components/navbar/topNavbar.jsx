@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -20,6 +20,7 @@ import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { ColorModeContext } from "../../context/context";
 import CONSTANTS from "../constants";
+import { useNavigate } from "react-router-dom";
 
 const drawerWidth = CONSTANTS.DRAWER_WIDTH;
 const navItems = [
@@ -30,9 +31,12 @@ const navItems = [
 
 const TopNavbar = () => {
   const theme = useTheme();
-  const colorMode = React.useContext(ColorModeContext);
+  const colorMode = useContext(ColorModeContext);
 
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const navigate = useNavigate();
+  const gotoHome = () => navigate("/");
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -78,11 +82,23 @@ const TopNavbar = () => {
               display: { xs: "none", sm: "block" },
             }}
           >
-            Dhruven Shah
+            <span
+              className={`cursor-pointer ${
+                theme.palette.mode === "dark" ? null : "topNavText"
+              }`}
+              onClick={gotoHome}
+            >
+              Dhruven Shah
+            </span>
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button className="text-white" key={item.text}>
+              <Button
+                className={
+                  theme.palette.mode === "dark" ? "text-white" : "topNavText"
+                }
+                key={item.text}
+              >
                 {item.text}
               </Button>
             ))}

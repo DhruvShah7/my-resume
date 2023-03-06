@@ -35,17 +35,11 @@ const App = () => {
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <StyledEngineProvider injectFirst>
-          <TopNavbar />
           <BrowserRouter>
+            <TopNavbar />
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route exact path="/discover" element={<DiscoverHome />} />
-              {/* <Route path="/individualFeed">
-          <IndividualFeed />
-        </Route>
-        <Route path="*">
-          <NotFound />
-        </Route> */}
             </Routes>
           </BrowserRouter>
         </StyledEngineProvider>

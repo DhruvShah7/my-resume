@@ -1,11 +1,11 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import Box from "@mui/material/Box";
 import { Container, IconButton } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-const AboutMePage = () => {
+const AboutMePage = ({ scrollTo }, ref) => {
   return (
-    <Box className="w-100 bg-dark">
+    <Box ref={ref} className="w-100 bg-dark">
       <Container
         maxWidth="md"
         className="h-100 d-flex flex-column align-items-center justify-content-center text-white text-center"
@@ -31,7 +31,7 @@ const AboutMePage = () => {
           Engineering in Computer engineering 4 years program.
         </p>
         <div className="d-flex align-items-center justify-content-center my-20">
-          <IconButton onClick={() => {}} color="inherit">
+          <IconButton onClick={() => scrollTo("resume")} color="inherit">
             <ExpandMoreIcon className="bounce2" sx={{ fontSize: 80 }} />
           </IconButton>
         </div>
@@ -40,6 +40,4 @@ const AboutMePage = () => {
   );
 };
 
-AboutMePage.propTypes = {};
-
-export default AboutMePage;
+export default forwardRef(AboutMePage);

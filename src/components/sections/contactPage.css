@@ -26,3 +26,8 @@
   color: #0a66c2 !important;
   transform: scale(1.4);
 }
+
+.gotoTopBtn:hover {
+  cursor: pointer;
+  transform: scale(1.4);
+}
