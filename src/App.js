@@ -35,7 +35,7 @@ const App = () => {
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <StyledEngineProvider injectFirst>
-          <BrowserRouter>
+          <BrowserRouter basename={process.env.PUBLIC_URL}>
             <TopNavbar />
             <Routes>
               <Route exact path="/" element={<Home />} />
