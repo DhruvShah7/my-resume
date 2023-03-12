@@ -48,7 +48,7 @@ const ProjectItem = ({ projectObj }) => {
     </ListItem>
   ));
   return (
-    <Grid item className="bounce" xs={6}>
+    <Grid item className="bounce" md={6} sm={12}>
       <Item className="h-100 text-left" variant="outlined" sx={{ p: 2 }}>
         <h3 className="m-0">{projectObj.name}</h3>
         <p className="m-0">
@@ -66,8 +66,8 @@ const ProjectItem = ({ projectObj }) => {
 const Projects = () => {
   return (
     <>
-      <SectionTitle title={"My Projects"} />
-      <Grid container columnSpacing={{ xs: 2, sm: 4 }} sx={{ mt: 3 }}>
+      <SectionTitle title={"My Projects"} className="mb-20" />
+      <Grid container columnSpacing={{ md: 4 }} rowSpacing={{ sm: 2 }}>
         {projectList.map((project) => (
           <ProjectItem key={project.name} projectObj={project} />
         ))}
