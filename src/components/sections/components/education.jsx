@@ -32,7 +32,7 @@ const StudyItem = ({ studyObj, certificate }) => {
       <Grid
         item
         xs
-        className="d-flex flex-column align-items-start"
+        className="d-flex flex-column align-items-start text-left"
         sx={{
           ml: 2,
         }}
